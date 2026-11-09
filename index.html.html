@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quando a Luz Apagar — O plano de 72 horas que toda família brasileira precisa ter</title>
+<meta name="description" content="Guia prático de 29 páginas para sua família atravessar apagões, falta de água e emergências com calma. Baseado em fontes oficiais. Baixe agora.">
+<style>
+  :root{
+    --bg:#0A0F1A;
+    --bg2:#0F1626;
+    --panel:#141D31;
+    --line:#243050;
+    --txt:#E8ECF4;
+    --muted:#93A0B8;
+    --amber:#FFB84D;
+    --amber2:#FF9E2C;
+    --amber-soft:rgba(255,184,77,.12);
+    --green:#7BC47F;
+    --red:#E86A6A;
+    --radius:16px;
+    --maxw:920px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:72px 0}
+  h1,h2,h3{font-weight:800;line-height:1.2;letter-spacing:-.01em}
+  h2{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:18px}
+  .kicker{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--amber);margin-bottom:14px;
+  }
+  .lead{font-size:1.08rem;color:var(--muted)}
+  .accent{color:var(--amber)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:92vh;display:flex;align-items:center;
+    background:
+      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(255,158,44,.16), transparent 60%),
+      radial-gradient(circle 340px at 82% 25%, rgba(255,184,77,.07), transparent 70%),
+      linear-gradient(180deg,#0A0F1A 0%, #0C1220 100%);
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;width:100%;padding-top:80px;padding-bottom:80px}
+  .stars{position:absolute;inset:0;z-index:1;opacity:.5}
+  .stars i{
+    position:absolute;width:2px;height:2px;border-radius:50%;background:#C9D6EE;
+    animation:twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.8}}
+  .bulb-glow{
+    position:absolute;top:12%;right:14%;width:180px;height:180px;z-index:1;
+    background:radial-gradient(circle, rgba(255,184,77,.28), transparent 65%);
+    filter:blur(6px);animation:pulse 5s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.12);opacity:.6}}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.6rem);max-width:640px}
+  .hero h1 .light{
+    background:linear-gradient(92deg,#FFD9A0,#FFB84D 55%,#FF9E2C);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .lead{max-width:560px;margin:22px 0 34px;font-size:1.12rem}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);
+    border:1px solid var(--line);border-radius:99px;padding:7px 14px;background:rgba(20,29,49,.7);
+  }
+  .badge b{color:var(--txt)}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:linear-gradient(180deg,#FFC670,#FF9E2C);
+    color:#1A1206;font-weight:800;font-size:1.06rem;
+    padding:17px 38px;border-radius:14px;border:none;cursor:pointer;
+    box-shadow:0 10px 34px rgba(255,158,44,.35), inset 0 1px 0 rgba(255,255,255,.45);
+    text-decoration:none;transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(255,158,44,.45), inset 0 1px 0 rgba(255,255,255,.45)}
+  .btn .arrow{transition:transform .18s ease}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .btn-ghost{
+    display:inline-flex;margin-top:16px;color:var(--muted);font-size:.88rem;text-decoration:none;
+    border-bottom:1px dashed var(--line);padding-bottom:2px;
+  }
+  .micro-note{margin-top:14px;font-size:.8rem;color:var(--muted)}
+
+  /* ---------- SCENE / PAIN ---------- */
+  .scene{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .scene-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 34px 30px;position:relative;
+  }
+  .scene-card .time{
+    font-family:Consolas,monospace;color:var(--amber);font-size:.95rem;letter-spacing:.08em;
+  }
+  .scene-card p{color:var(--txt);font-size:1.14rem;margin-top:10px;font-style:italic}
+  .scene-card .q{color:var(--red);font-weight:700;font-style:normal}
+  .pain-list{list-style:none;margin-top:34px;display:grid;gap:14px}
+  .pain-list li{
+    display:flex;gap:14px;align-items:flex-start;color:var(--muted);
+    background:rgba(20,29,49,.5);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  }
+  .pain-list li::before{content:"—";color:var(--red);font-weight:800;flex-shrink:0}
+  .pain-list b{color:var(--txt)}
+  .pain-outro{margin-top:26px;color:var(--txt);font-size:1.12rem}
+  .pain-outro .accent{font-weight:800}
+
+  /* ---------- SOLUTION ---------- */
+  .flip{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+  @media(min-width:760px){.flip{grid-template-columns:1.05fr .95fr}}
+  .book-mock{
+    position:relative;aspect-ratio:384/600;max-width:300px;margin:0 auto;
+    border-radius:12px;transform:rotate(2.5deg);
+    background:
+      radial-gradient(ellipse 90% 30% at 50% 0%, rgba(255,184,77,.35), transparent 60%),
+      linear-gradient(160deg,#1A2440 0%,#0E1526 70%);
+    border:1px solid #2A3A5F;box-shadow:24px 30px 60px rgba(0,0,0,.55);
+    display:flex;flex-direction:column;justify-content:space-between;padding:34px 26px;
+    transition:transform .3s ease;
+  }
+  .book-mock:hover{transform:rotate(0deg) translateY(-6px)}
+  .book-mock .bt{font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+  .book-mock .tt{font-size:1.55rem;font-weight:800;line-height:1.15}
+  .book-mock .tt span{color:var(--amber)}
+  .book-mock .st{font-size:.78rem;color:var(--muted)}
+  .book-mock .pg{align-self:center;font-size:.7rem;color:var(--muted);letter-spacing:.15em}
+  .check-grid{display:grid;gap:12px;margin-top:24px}
+  .check{
+    display:flex;gap:12px;align-items:flex-start;color:var(--muted);
+  }
+  .check .ck{
+    width:22px;height:22px;border-radius:7px;background:var(--amber-soft);
+    color:var(--amber);display:flex;align-items:center;justify-content:center;
+    font-size:.8rem;font-weight:800;flex-shrink:0;margin-top:2px;border:1px solid rgba(255,184,77,.3);
+  }
+
+  /* ---------- STATS STRIP ---------- */
+  .stats{
+    background:linear-gradient(90deg,rgba(255,184,77,.09),rgba(255,184,77,.03));
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;
+  }
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+  @media(max-width:640px){.stat-row{grid-template-columns:1fr;gap:26px}}
+  .stat .n{font-size:2.2rem;font-weight:800;color:var(--amber)}
+  .stat .l{font-size:.85rem;color:var(--muted);margin-top:4px}
+
+  /* ---------- CHAPTERS ---------- */
+  .chap-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:28px}
+  @media(min-width:700px){.chap-grid{grid-template-columns:1fr 1fr}}
+  .chap{
+    display:flex;gap:16px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:18px 20px;transition:border-color .2s ease, transform .2s ease;
+  }
+  .chap:hover{border-color:rgba(255,184,77,.5);transform:translateY(-2px)}
+  .chap .num{
+    font-size:1.05rem;font-weight:800;color:var(--amber);flex-shrink:0;
+    width:34px;height:34px;border-radius:10px;background:var(--amber-soft);
+    display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,184,77,.25);
+  }
+  .chap h3{font-size:.98rem;margin-bottom:4px}
+  .chap p{font-size:.85rem;color:var(--muted)}
+
+  /* ---------- FICHAS / BONUS ---------- */
+  .bonus{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .bonus-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+  @media(min-width:700px){.bonus-grid{grid-template-columns:repeat(3,1fr)}}
+  .bonus-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;position:relative;overflow:hidden;
+  }
+  .bonus-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--amber),transparent);
+  }
+  .bonus-card .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:#1A1206;background:var(--amber);
+    border-radius:6px;padding:4px 10px;margin-bottom:14px;
+  }
+  .bonus-card h3{font-size:1.02rem;margin-bottom:8px}
+  .bonus-card p{font-size:.86rem;color:var(--muted)}
+
+  /* ---------- PARA QUEM ---------- */
+  .who{display:grid;grid-template-columns:1fr;gap:16px;margin-top:26px}
+  @media(min-width:700px){.who{grid-template-columns:1fr 1fr}}
+  .who .yes,.who .no{
+    border-radius:12px;padding:22px;border:1px solid var(--line);background:var(--panel);
+  }
+  .who h3{font-size:1rem;margin-bottom:14px}
+  .who .yes h3{color:var(--green)}
+  .who .no h3{color:var(--muted)}
+  .who ul{list-style:none;display:grid;gap:10px}
+  .who li{display:flex;gap:10px;font-size:.92rem;color:var(--muted)}
+  .who .yes li::before{content:"✓";color:var(--green);font-weight:800}
+  .who .no li::before{content:"✕";color:var(--red);font-weight:800}
+
+  /* ---------- OFFER ---------- */
+  .offer{position:relative;overflow:hidden}
+  .offer::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 45% at 50% 0%, rgba(255,158,44,.13), transparent 65%);
+  }
+  .offer .wrap{position:relative}
+  .price-card{
+    background:linear-gradient(180deg,#182342,#111A2E);
+    border:1px solid rgba(255,184,77,.4);border-radius:22px;
+    padding:44px 38px;max-width:560px;margin:0 auto;text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,184,77,.08);
+  }
+  .price-old{font-size:1rem;color:var(--muted);text-decoration:line-through}
+  .price-now{
+    font-size:clamp(2.6rem,7vw,3.4rem);font-weight:800;letter-spacing:-.02em;
+    background:linear-gradient(180deg,#FFD9A0,#FFB84D);
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin:8px 0 4px;
+  }
+  .price-terms{font-size:.8rem;color:var(--muted);margin-bottom:26px}
+  .offer .btn{width:100%;max-width:360px;font-size:1.12rem}
+  .price-includes{
+    margin-top:28px;display:grid;gap:9px;text-align:left;max-width:380px;margin-left:auto;margin-right:auto;
+  }
+  .price-includes div{display:flex;gap:10px;font-size:.9rem;color:var(--muted)}
+  .price-includes b{color:var(--txt)}
+  .price-includes .ck{color:var(--green);font-weight:800}
+  .guarantee{
+    margin-top:34px;display:flex;gap:16px;align-items:center;justify-content:center;
+    color:var(--muted);font-size:.9rem;max-width:520px;margin-left:auto;margin-right:auto;
+  }
+  .guarantee .shield{
+    width:44px;height:44px;border-radius:50%;flex-shrink:0;
+    border:1px solid rgba(123,196,127,.4);background:rgba(123,196,127,.1);
+    color:var(--green);display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--bg2);border-top:1px solid var(--line)}
+  details{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;margin-bottom:12px;
+  }
+  details[open]{border-color:rgba(255,184,77,.4)}
+  summary{
+    cursor:pointer;font-weight:700;font-size:.98rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--amber);font-size:1.3rem;font-weight:400;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:12px;color:var(--muted);font-size:.92rem}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{text-align:center;position:relative;overflow:hidden}
+  .final::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 110%, rgba(255,158,44,.14), transparent 65%);
+  }
+  .final .wrap{position:relative}
+  .final h2{max-width:560px;margin:0 auto 16px}
+  .final .lead{max-width:480px;margin:0 auto 32px}
+
+  footer{
+    padding:38px 0 46px;border-top:1px solid var(--line);
+    font-size:.78rem;color:var(--muted);text-align:center;
+  }
+  footer .disclaimer{max-width:640px;margin:0 auto;line-height:1.7}
+
+  /* reveal on scroll */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+  .rv.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .rv{opacity:1;transform:none;transition:none}
+    .stars i,.bulb-glow{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="stars" id="stars"></div>
+  <div class="bulb-glow"></div>
+  <div class="wrap">
+    <span class="kicker">Guia de preparação familiar • Edição 2026</span>
+    <h1>O apagão não manda aviso.<br><span class="light">A sua preparação, sim.</span></h1>
+    <p class="lead">
+      Quando a luz apagar, você tem duas opções: improvisar no escuro com a família
+      te olhando esperando uma resposta — ou abrir um plano que já estava pronto.
+      Este guia é esse plano: <b>as primeiras 72 horas, passo a passo.</b>
+    </p>
+    <a href="#oferta" class="btn">
+      Quero o meu plano de 72 horas
+      <span class="arrow">→</span>
+    </a>
+    <div class="micro-note">Download imediato • PDF de 29 páginas • Leitura em 1 tarde</div>
+    <div class="hero-badges">
+      <span class="badge">📄 <b>29 páginas</b> práticas</span>
+      <span class="badge">🏛️ Baseado em <b>fontes oficiais</b> (MS, CDC, Defesa Civil)</span>
+      <span class="badge">🇧🇷 Feito para a <b>realidade brasileira</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CENÁRIO / DOR ============ -->
+<section class="scene">
+  <div class="wrap">
+    <span class="kicker">Reconhece esta cena?</span>
+    <div class="scene-card rv">
+      <div class="time">20h31 — 14 segundos depois</div>
+      <p>
+        A casa fica escura. A internet para. O silêncio dura meio segundo…
+        e então vem a pergunta que ninguém sabe responder:
+        <span class="q">"E agora?"</span>
+      </p>
+    </div>
+    <ul class="pain-list rv">
+      <li>Alguém abre a geladeira <b>"só pra ver"</b> — e o frio que ainda restava escapa.</li>
+      <li>Meia hora de <b>procurar a lanterna</b> que "estava aqui em algum lugar".</li>
+      <li>O celular já está em <b>15%</b> — e ninguém lembra onde está o carregador portátil.</li>
+      <li>Água? Ninguém sabe <b>quanto tem</b>, se dá pra beber da torneira, ou por quanto tempo a comida aguenta.</li>
+      <li>Todo mundo <b>ligando ao mesmo tempo</b> — e nenhum plano de quem faz o quê.</li>
+      <li>E se precisar <b>sair</b>? Sai pra onde, por qual caminho, levando o quê?</li>
+    </ul>
+    <p class="pain-outro rv">
+      O problema nunca foi o apagão. O problema é <span class="accent">chegar nele sem plano</span> —
+      e transformar um perrengue de horas numa noite inteira de tensão.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SOLUÇÃO ============ -->
+<section id="solucao">
+  <div class="wrap">
+    <span class="kicker">A solução</span>
+    <h2 class="rv">Um guia que responde <span class="accent">"e agora?"</span> antes de você precisar perguntar</h2>
+    <div class="flip">
+      <div class="rv">
+        <p class="lead">
+          <b>Quando a Luz Apagar</b> é um manual de bolso para emergências domésticas:
+          apagões, falta de água, enchentes e interrupções de serviços.
+          Sem alarmismo, sem lista de 200 itens impossíveis — só o que uma família real
+          precisa decidir, na ordem certa, quando tudo falha ao mesmo tempo.
+        </p>
+        <div class="check-grid">
+          <div class="check"><span class="ck">✓</span><span><b>Os primeiros minutos:</b> o que fazer na sequência exata (riscos → pessoas → recursos → decisão), sem pular etapas.</span></div>
+          <div class="check"><span class="ck">✓</span><span><b>Ficar ou sair:</b> um critério claro e honesto — inclusive quando estoque nenhum substitui uma ordem de evacuação.</span></div>
+          <div class="check"><span class="ck">✓</span><span><b>Água e comida:</b> quanto armazenar por pessoa, como tratar água com segurança e o que descartar (sem "cheirar pra ver").</span></div>
+          <div class="check"><span class="ck">✓</span><span><b>Segurança real:</b> gás, geradores, monóxido de carbono, fios caídos — os erros que colocam gente no hospital.</span></div>
+          <div class="check"><span class="ck">✓</span><span><b>Cada família:</b> bebês, idosos, remédios refrigerados, cadeira elétrica, animais. O guia trata do que os genéricos ignoram.</span></div>
+          <div class="check"><span class="ck">✓</span><span><b>Fontes oficiais:</b> 19 referências verificáveis — Ministério da Saúde, CDC, Defesa Civil, Anatel e outras.</span></div>
+        </div>
+      </div>
+      <div class="book-mock rv" aria-hidden="true">
+        <div>
+          <div class="bt">Preparação familiar</div>
+          <div class="tt">Quando a <span>luz</span><br>apagar</div>
+          <div class="st">Um plano para as primeiras 72 horas</div>
+        </div>
+        <div class="pg">29 PÁGINAS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROVA / NÚMEROS ============ -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat-row rv">
+      <div class="stat"><div class="n">72h</div><div class="l">o horizonte de planejamento recomendado por agências internacionais</div></div>
+      <div class="stat"><div class="n">19</div><div class="l">fontes oficiais citadas e clicáveis dentro do PDF</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">fichas para imprimir, preencher e deixar à mão</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DENTRO DO GUIA ============ -->
+<section id="conteudo">
+  <div class="wrap">
+    <span class="kicker">Dentro do guia</span>
+    <h2 class="rv">Tudo o que você vai ter em mãos</h2>
+    <p class="lead rv">Da capa à última ficha, cada página responde uma pergunta que uma emergência faz.</p>
+    <div class="chap-grid">
+      <div class="chap rv"><div class="num">04</div><div><h3>A luz acabou — e agora?</h3><p>A sequência dos primeiros minutos, com os 4 telefones de emergência e o que dizer ao ligar.</p></div></div>
+      <div class="chap rv"><div class="num">05</div><div><h3>Organize as próximas horas</h3><p>O plano por período: primeira hora, 6–24h, 24–72h — e a revisão de 2 minutos que se repete.</p></div></div>
+      <div class="chap rv"><div class="num">06</div><div><h3>Ficar ou sair de casa</h3><p>O critério objetivo, sem achismo: quando permanecer é seguro e quando sair é a única opção.</p></div></div>
+      <div class="chap rv"><div class="num">07</div><div><h3>Sua reserva de água</h3><p>4 litros/pessoa/dia: a conta pronta, como armazenar e a cada quanto tempo trocar.</p></div></div>
+      <div class="chap rv"><div class="num">08</div><div><h3>Quando faltar água segura</h3><p>Filtrar, clorar (dosagem exata), ferver — e quando nenhuma dessas técnicas resolve.</p></div></div>
+      <div class="chap rv"><div class="num">09</div><div><h3>A despensa que funciona</h3><p>Comida que a família já come, sem cozimento, com a conta de embalagens por refeição.</p></div></div>
+      <div class="chap rv"><div class="num">11</div><div><h3>Geladeira sem energia</h3><p>As 4h/48h/24h de referência e a regra de ouro: na dúvida, descarte.</p></div></div>
+      <div class="chap rv"><div class="num">13</div><div><h3>Eletricidade, gás e fogo</h3><p>Os erros domésticos que matam: gerador em lugar errado, cheiro de gás, fios caídos.</p></div></div>
+      <div class="chap rv"><div class="num">14</div><div><h3>Comunicação sem internet</h3><p>Telefones em papel, o contato fora da região e o alerta de SMS da Defesa Civil pelo CEP.</p></div></div>
+      <div class="chap rv"><div class="num">17</div><div><h3>Remédios e primeiros cuidados</h3><p>Medicamentos refrigerados, o kit simples e os sinais que exigem o 192 já.</p></div></div>
+      <div class="chap rv"><div class="num">20</div><div><h3>Água subindo, terreno cedendo</h3><p>Enchente e deslizamento: sinais de alerta, quando sair agora e o que nunca atravessar.</p></div></div>
+      <div class="chap rv"><div class="num">22</div><div><h3>Três ensaios em família</h3><p>Cenários prontos para treinar decisões <i>antes</i> — sem desligar nada em casa.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BÔNUS ============ -->
+<section class="bonus">
+  <div class="wrap">
+    <span class="kicker">Incluídos no PDF</span>
+    <h2 class="rv">4 fichas que valem o guia inteiro</h2>
+    <p class="lead rv">Imprima, preencha com a família e deixe visível. É o que transforma leitura em preparo.</p>
+    <div class="bonus-grid">
+      <div class="bonus-card rv">
+        <span class="tag">Ficha 1</span>
+        <h3>Plano familiar de emergência</h3>
+        <p>Pontos de encontro, contatos de fora da região, rotas principal e alternativa, quem busca quem — tudo em uma folha só.</p>
+      </div>
+      <div class="bonus-card rv">
+        <span class="tag">Ficha 3</span>
+        <h3>Reserva e necessidades de saúde</h3>
+        <p>A conta da sua água (moradores × 4L × 3 dias), validades e o registro de saúde individual por pessoa.</p>
+      </div>
+      <div class="bonus-card rv">
+        <span class="tag">Ficha 4</span>
+        <h3>Cartão de ação rápida</h3>
+        <p>Imprima e deixe na geladeira: risco imediato? Os 4 números de emergência e o roteiro do que dizer ao ligar.</p>
+      </div>
+      <div class="bonus-card rv">
+        <span class="tag">Bônus</span>
+        <h3>Mapa de consulta de 10 segundos</h3>
+        <p>Com links clicáveis para as 19 fontes oficiais e marcadores de páginas: durante a emergência, você pula direto no capítulo certo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUEM ============ -->
+<section id="para-quem">
+  <div class="wrap">
+    <span class="kicker">Honestidade primeiro</span>
+    <h2 class="rv">Este guia é para você?</h2>
+    <div class="who">
+      <div class="yes rv">
+        <h3>É para você se…</h3>
+        <ul>
+          <li>Você tem família e quer um plano que caiba na rotina real</li>
+          <li>Vive em região de apagões, alagamentos ou instabilidade de serviços</li>
+          <li>Tem crianças, idosos, animais ou alguém com equipamento médico em casa</li>
+          <li>Prefere se preparar com calma hoje do que improvisar com medo amanhã</li>
+          <li>Quer orientação baseada em fontes oficiais, não em "dicas de grupo de WhatsApp"</li>
+        </ul>
+      </div>
+      <div class="no rv">
+        <h3>Não é para você se…</h3>
+        <ul>
+          <li>Procura material de sobrevivência extrema, militar ou "fim do mundo"</li>
+          <li>Espera garantia de que nada vai acontecer — nenhum guia pode prometer isso</li>
+          <li>Quer substituir atendimento médico, serviço elétrico ou autoridades locais</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead rv" style="margin-top:26px">
+      Um guia honesto também sabe dizer o que ele <b>não</b> é. Este é um material educativo independente,
+      que deixa claro cada limite — e é exatamente por isso que dá pra confiar nele.
+    </p>
+  </div>
+</section>
+
+<!-- ============ OFERTA ============ -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="price-card rv">
+      <span class="kicker">Oferta de lançamento</span>
+      <div class="price-old">R$ 47,00</div>
+      <div class="price-now">R$ 35,00</div>
+      <div class="price-terms">pagamento único • acesso vitalício ao PDF</div>
+
+      <a href="https://pay.hotmart.com/S108319168T?off=xhxrwu6n" class="btn" rel="nofollow noopener" target="_blank">
+        Baixar o guia agora
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="price-includes">
+        <div><span class="ck">✓</span><span><b>Guia completo</b> de 29 páginas em PDF</span></div>
+        <div><span class="ck">✓</span><span><b>4 fichas</b> prontas para imprimir e preencher</span></div>
+        <div><span class="ck">✓</span><span><b>19 links</b> clicáveis para as fontes oficiais</span></div>
+        <div><span class="ck">✓</span><span><b>Sumário navegável</b> — consulte em 10 segundos</span></div>
+        <div><span class="ck">✓</span><span><b>Cópia offline</b> no celular de cada adulto da casa</span></div>
+      </div>
+
+      <div class="guarantee rv">
+        <div class="shield">🛡</div>
+        <div><b style="color:var(--txt)">Garantia de 7 dias.</b> Se achar que o guia não vale o preço, devolvemos 100% — sem perguntas, sem burocracia.</div>
+      </div>
+    </div>
+    <p class="micro-note" style="text-align:center;margin-top:22px">
+      🔒 Pagamento processado com segurança • Envio imediato por e-mail
+    </p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <span class="kicker">Perguntas frequentes</span>
+    <h2 class="rv">Antes de comprar</h2>
+    <details class="rv">
+      <summary>Não é alarmismo falar nisso?</summary>
+      <p>É o contrário. Família preparada é família que dorme melhor. O guia é deliberadamente calmo: sem cenários apocalípticos, sem "guerra", com linguagem de organização doméstica. A estratégia das 72 horas é uma referência internacional de preparação civil — adaptada aqui para a casa brasileira.</p>
+    </details>
+    <details class="rv">
+      <summary>Preciso comprar muita coisa depois?</summary>
+      <p>Não. O guia inclui um plano de <b>preparação gradual</b> que começa com o que você já tem em casa hoje, e evolui em compras pequenas dentro do seu orçamento. Também ensina a priorizar: água, comida utilizável, iluminação e cuidados de saúde — antes de qualquer equipamento caro.</p>
+    </details>
+    <details class="rv">
+      <summary>Funciona para apartamento? Para quem tem bebê ou idoso?</summary>
+      <p>Sim. Há orientações específicas para edifícios (escadas, procedimentos do condomínio), bebês (fórmulas, água segura, o que nunca diluir), idosos e pessoas com deficiência (equipamentos, acessibilidade, autonomia de bateria) — e para animais de estimação.</p>
+    </details>
+    <details class="rv">
+      <summary>É rápido de ler? E na emergência, dá pra consultar?</summary>
+      <p>Leitura completa em uma tarde. Mas o design é de <b>consulta</b>: mapa de temas por página, sumário navegável e capítulos independentes. No meio da emergência, você abre direto no problema que está acontecendo — luz, água, comida, evacuação — em 10 segundos.</p>
+    </details>
+    <details class="rv">
+      <summary>As orientações são confiáveis?</summary>
+      <p>Cada afirmação técnica vem marcada com uma referência entre colchetes — 19 fontes ao total, do Ministério da Saúde, CDC, Defesa Civil, Anatel e outros órgãos, todas com link clicável no próprio PDF para você conferir. O guia é educativo e independente: não substitui atendimento médico nem as autoridades locais, e deixa isso claro.</p>
+    </details>
+    <details class="rv">
+      <summary>Como recebo o material?</summary>
+      <p>Após o pagamento, você recebe o PDF imediatamente por e-mail — e pode baixar no celular, tablet e computador. A sugestão do próprio guia: deixar uma cópia offline no celular de mais de um adulto da casa.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final">
+  <div class="wrap">
+    <span class="kicker">A decisão</span>
+    <h2 class="rv">O próximo apagão vai chegar.<br><span class="accent">A diferença vai ser você.</span></h2>
+    <p class="lead rv">
+      Você pode fechar esta página e torcer para nunca precisar —
+      ou investir R$ 35 para que, quando a luz apagar,
+      a primeira coisa que sua família veja no escuro seja você <b>acendendo um plano</b>.
+    </p>
+    <a href="https://pay.hotmart.com/S108319168T?off=xhxrwu6n" class="btn rv" rel="nofollow noopener" target="_blank">
+      Quero meu plano de 72 horas — R$ 35,00
+      <span class="arrow">→</span>
+    </a>
+    <div class="micro-note" style="margin-top:16px">Garantia incondicional de 7 dias</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="disclaimer">
+      © 2026 Quando a Luz Apagar • Guia educativo independente, sem chancela governamental ou revisão profissional individual.
+      Este material não substitui atendimento médico, treinamento de primeiros socorros, avaliação estrutural ou serviço elétrico especializado.
+      Em emergência, acione: SAMU 192 • Bombeiros 193 • Defesa Civil 199 • Polícia Militar 190.
+    </p>
+  </div>
+</footer>
+
+<script>
+// estrelas do hero
+(function(){
+  var s = document.getElementById('stars');
+  if(!s) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var n = reduce ? 0 : 46;
+  for(var i=0;i<n;i++){
+    var st = document.createElement('i');
+    st.style.top = (Math.random()*90).toFixed(1)+'%';
+    st.style.left = (Math.random()*100).toFixed(1)+'%';
+    st.style.animationDelay = (Math.random()*4).toFixed(1)+'s';
+    st.style.animationDuration = (3+Math.random()*3).toFixed(1)+'s';
+    s.appendChild(st);
+  }
+})();
+
+// reveal on scroll
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(e){ e.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  },{threshold:.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
